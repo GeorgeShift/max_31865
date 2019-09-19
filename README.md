@@ -25,7 +25,7 @@ int main(void)
     uint8_t temp = 0;
     uint8_t Fault_Error;
     uint8_t max_connected;
-    float temperature;
+    long temperature;
 
     max_init_port();	
     _delay_ms(2000);
