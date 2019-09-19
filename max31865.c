@@ -66,8 +66,6 @@ void max_init_port(void)
 	DDR(MOSI_PORT) |= _BV(MOSI_PIN);
 	DDR(SCK_PORT) |= _BV(SCK_PIN);
 	
-	DDRB |= (1 << DDB2);	// SS
-	
 	// set outputs
 	CS_PORT |= _BV(CS_PIN);	// CS HIGH, slave disabled
 	
@@ -146,7 +144,7 @@ long max_get_data(char datatype)
 		if (datatype == 'r') return RTD;
 			
 		// Basic temperature calculation, the accuracy for temperatures 
-		// between -75°C - 100°C is max +-1.5°C
+		// between -75Â°C - 100Â°C is max +-1.5Â°C
 		temperature = ( (long)10*RTD >> 5) - 2560;	// RTD / 32 - 256
 		if (datatype == 't') return temperature;
 	}
